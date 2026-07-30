@@ -1,9 +1,31 @@
 aid: minio
-name: Minio
-description: Minio is a company surfaced as a portfolio company of general-catalyst, softbank-vision-fund
-  and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the
-  enrichment pipeline.
+name: MinIO
+description: >-
+  MinIO is a high-performance, S3-compatible object storage system built for
+  large-scale AI, analytics, and cloud-native data infrastructure. Its API is
+  a drop-in implementation of the Amazon S3 REST API (bucket and object
+  operations, multipart uploads, versioning, object locking / WORM retention,
+  lifecycle policies, replication, and encryption), authenticated with AWS
+  Signature Version 4 using access-key/secret-key pairs. Alongside the S3 data
+  API, MinIO ships an Admin API (madmin) for cluster, user, policy, and
+  service management. It is distributed as open-source software and as the
+  commercial AIStor product, deployed on Kubernetes via an operator and Helm
+  charts, and driven through first-party SDKs for Go, Python, Java, JavaScript,
+  .NET, C++, and Rust plus the `mc` command-line client.
 url: https://raw.githubusercontent.com/api-evangelist/minio/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://github.com/minio.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -13,12 +35,111 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
+- Object Storage
+- Storage
+- S3 Compatible
+- Cloud Native
+- Kubernetes
+- Data Infrastructure
+- AI Storage
 - Company
-apis: []
+apis:
+- name: MinIO S3-Compatible API
+  description: >-
+    S3-compatible object storage REST API implementing Amazon S3 bucket and
+    object operations (put/get/list/delete objects, multipart uploads,
+    versioning, object locking, lifecycle, replication), authenticated with
+    AWS Signature Version 4.
+  humanURL: https://min.io/product/s3-compatibility
+  baseURL: https://play.min.io
+  tags:
+  - Object Storage
+  - S3 Compatible
+  properties:
+  - type: Documentation
+    url: https://min.io/docs
+- name: MinIO Admin API
+  description: >-
+    Administrative API (madmin) for managing MinIO/AIStor clusters: users,
+    groups, canned and IAM policies, service accounts, healing, cluster info,
+    configuration, and service restart.
+  humanURL: https://github.com/minio/madmin-go
+  baseURL: https://play.min.io
+  tags:
+  - Administration
+  - Object Storage
+common:
+- type: TrustCenter
+  url: security/minio-trust-center.yml
+- type: DeveloperPortal
+  url: https://min.io/docs
+- type: Documentation
+  url: https://min.io/docs
+- type: APIReference
+  url: https://min.io/product/s3-compatibility
+- type: GettingStarted
+  url: https://min.io/docs/minio/linux/index.html
+- type: GitHubOrganization
+  url: https://github.com/minio
+- type: Blog
+  url: https://blog.min.io
+- type: Pricing
+  url: https://min.io/pricing
+- type: Support
+  url: https://subnet.min.io
+- type: SignUp
+  url: https://subnet.min.io/login
+- type: Packages
+  url: packages/minio-packages.yml
+- type: SDKs
+  url: packages/minio-packages.yml
+- type: CLI
+  url: cli/minio-cli.yml
+- type: MCPServer
+  url: mcp/minio-mcp.yml
+- type: LLMsTxt
+  url: llms/minio-llms.txt
+- type: WellKnown
+  url: well-known/minio-well-known.yml
+- type: Authentication
+  url: authentication/minio-authentication.yml
+- type: Conventions
+  url: conventions/minio-conventions.yml
+- type: Conformance
+  url: conformance/minio-conformance.yml
+- type: ErrorCatalog
+  url: errors/minio-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/minio-lifecycle.yml
+- type: ChangeLog
+  url: changelog/minio-changelog.yml
+- type: Sandbox
+  url: sandbox/minio-sandbox.yml
+- type: DomainSecurity
+  url: security/minio-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/minio-vulnerability-disclosure.yml
+- type: Security
+  url: security/minio-vulnerability-disclosure.yml
+- type: TrustCenter
+  url: security/minio-trust-center.yml
+- type: Compliance
+  url: https://trust.min.io/
+- type: Webhooks
+  url: asyncapi/minio-bucket-notifications-webhooks.yml
+- type: TermsOfService
+  url: https://www.min.io/legal/aistor-free-agreement
+- type: PrivacyPolicy
+  url: https://www.min.io/legal/privacy-policy
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1
