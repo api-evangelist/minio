@@ -1,0 +1,47 @@
+# MinIO
+
+> MinIO is a high-performance, S3-compatible object storage system for large-scale AI, analytics, and cloud-native data infrastructure. It implements the Amazon S3 REST API (buckets, objects, multipart uploads, versioning, object locking/WORM, lifecycle, replication, encryption) authenticated with AWS Signature Version 4, plus an Admin API for cluster, user, and policy management. Distributed as open-source software and the commercial AIStor product.
+
+## APIs
+- [S3-Compatible API](https://min.io/product/s3-compatibility): Drop-in Amazon S3 REST API for object storage.
+- [Admin API (madmin)](https://github.com/minio/madmin-go): Cluster, user, group, policy, and service management.
+
+## Docs
+- [Documentation](https://min.io/docs): Product and developer documentation.
+- [Getting Started](https://min.io/docs/minio/linux/index.html): Install and run MinIO.
+- [S3 compatibility](https://min.io/product/s3-compatibility): Supported S3 API surface.
+- [Identity & Access Management](https://min.io/docs/minio/linux/administration/identity-access-management.html): Users, policies, STS.
+
+## SDKs
+- [minio-go (Go)](https://github.com/minio/minio-go): `go get github.com/minio/minio-go/v7`
+- [minio-py (Python)](https://pypi.org/project/minio/): `pip install minio`
+- [minio-java (Java)](https://central.sonatype.com/artifact/io.minio/minio): `io.minio:minio`
+- [minio-js (JavaScript)](https://www.npmjs.com/package/minio): `npm install minio`
+- [minio-dotnet (.NET)](https://www.nuget.org/packages/Minio/): `dotnet add package Minio`
+- [minio-rs (Rust)](https://crates.io/crates/minio): `cargo add minio`
+- [minio-cpp (C++)](https://github.com/minio/minio-cpp)
+- [madmin-go (Admin SDK)](https://github.com/minio/madmin-go)
+
+## Tools
+- [mc (MinIO Client CLI)](https://github.com/minio/mc): `brew install minio/stable/mc`
+- [AIStor MCP server](https://github.com/minio/mcp-server-aistor): Official Model Context Protocol server.
+- [MinIO Play sandbox](https://play.min.io): Public S3 playground, preconfigured `play` alias in mc.
+
+## Artifacts
+- [Packages / SDKs](packages/minio-packages.yml)
+- [CLI (mc)](cli/minio-cli.yml)
+- [MCP server](mcp/minio-mcp.yml)
+- [Authentication](authentication/minio-authentication.yml)
+- [Conventions](conventions/minio-conventions.yml)
+- [Conformance](conformance/minio-conformance.yml)
+- [Error codes](errors/minio-error-codes.yml)
+- [Lifecycle](lifecycle/minio-lifecycle.yml)
+- [Changelog](changelog/minio-changelog.yml)
+- [Sandbox](sandbox/minio-sandbox.yml)
+
+## Project
+- [GitHub organization](https://github.com/minio)
+- [Blog](https://blog.min.io)
+- [Pricing](https://min.io/pricing)
+- [Support (SUBNET)](https://subnet.min.io)
+- [Security policy](https://github.com/minio/minio/blob/master/SECURITY.md)

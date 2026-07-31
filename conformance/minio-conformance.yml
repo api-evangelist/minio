@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://min.io/product/s3-compatibility
+standards:
+- id: aws-s3-api
+  conforms: true
+  evidence: MinIO implements the Amazon S3 REST API (bucket/object operations, multipart, ACLs, tagging) as its native data-plane API
+- id: aws-signature-v4
+  conforms: true
+  evidence: Requests authenticated with AWS Signature Version 4
+- id: aws-sts
+  conforms: true
+  evidence: Security Token Service with AssumeRole/AssumeRoleWithWebIdentity/LDAP/ClientGrants
+- id: aws-iam-policy
+  conforms: true
+  evidence: IAM-compatible JSON policy documents for users, groups, service accounts
+- id: s3-select
+  conforms: true
+  evidence: SelectObjectContent (S3 Select) SQL over CSV/JSON/Parquet objects
+- id: s3-object-lock-worm
+  conforms: true
+  evidence: Object Locking / WORM retention (governance and compliance modes) and legal hold
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use the S3 XML error envelope, not application/problem+json
+- id: oauth2
+  conforms: false
+  evidence: No OAuth2 authorization on the data plane; OIDC is used only as an STS identity source
+- id: openid-connect
+  conforms: partial
+  evidence: OIDC supported as an external identity provider for STS, not as API authorization

@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/minio/mc/blob/master/cmd/config-v10.go (the `play` alias shipped in the mc client)
+sandbox:
+  name: MinIO Play
+  description: >-
+    Public, shared MinIO playground server. The `play` alias ships pre-configured
+    in the mc client with published credentials, so anyone can exercise the full
+    S3 API against a live server without provisioning one. Data is public and
+    periodically wiped; do not store anything private.
+  endpoint: https://play.min.io
+  console: https://play.min.io:9443
+  preconfigured_alias: play
+  published_credentials:
+    access_key: Q3AM3UQ867SPQQA43P2F
+    secret_key: zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG
+    note: >-
+      These are the public, intentionally-shared Play credentials shipped in the
+      mc client source (cmd/config-v10.go). Published verbatim by MinIO; not
+      secret. Buckets and objects are visible to all Play users.
+  usage:
+    mc: mc alias is preconfigured as `play`; e.g. `mc ls play/`
+    sdk: point any MinIO SDK at endpoint play.min.io with the credentials above (useSSL=true)
+  test_vs_live:
+    separation: no test/live key prefixes; isolation is by deployment (Play is a separate public server)

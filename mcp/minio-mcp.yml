@@ -1,0 +1,61 @@
+generated: '2026-07-20'
+method: searched
+status: published
+source: https://github.com/minio/mcp-server-aistor
+server:
+  name: aistor
+  title: AIStor MCP server
+  description: >-
+    Official Model Context Protocol server for interacting with MinIO / AIStor
+    object stores. Ships as a container image; runs read-only by default and
+    gates write, delete, and admin operations behind explicit flags
+    (--allow-write, --allow-delete, --allow-admin).
+  transport: [stdio, streamable-http]
+  image: quay.io/minio/aistor/mcp-server-aistor:latest
+  repo: https://github.com/minio/mcp-server-aistor
+  docs: https://blog.min.io/mcp-server-for-aistor/
+  auth:
+    env: [MINIO_ENDPOINT, MINIO_ACCESS_KEY, MINIO_SECRET_KEY, MINIO_USE_SSL]
+tools:
+- name: list_buckets
+  category: read
+  description: List buckets in the object store
+- name: list_objects
+  category: read
+  description: List objects in a bucket (default limit 1000, tunable via --max-keys)
+- name: get_object_metadata
+  category: read
+  description: Get an object's metadata and tags
+- name: create_presigned_url
+  category: read
+  description: Create a presigned URL with expiration for an object
+- name: ask_object
+  category: ai
+  description: Describe an object's contents using AI
+- name: text_to_object
+  category: ai
+  description: Create an object from generated text
+- name: create_bucket
+  category: write
+  gated_by: --allow-write
+  description: Create a bucket
+- name: upload_object
+  category: write
+  gated_by: --allow-write
+  description: Upload an object to a bucket
+- name: add_tags
+  category: write
+  gated_by: --allow-write
+  description: Add tags to an object
+- name: delete_object
+  category: delete
+  gated_by: --allow-delete
+  description: Delete an object
+- name: delete_bucket
+  category: delete
+  gated_by: --allow-delete
+  description: Delete a bucket
+- name: get_cluster_info
+  category: admin
+  gated_by: --allow-admin
+  description: Get cluster info (config, health status, available space) in human-readable form

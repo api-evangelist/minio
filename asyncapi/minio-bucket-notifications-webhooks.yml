@@ -1,0 +1,95 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.min.io/enterprise/aistor-object-store/administration/bucket-notifications/
+spec_type: Webhooks
+summary: >-
+  MinIO (and AIStor) emit S3-style bucket event notifications when objects and
+  buckets change. Events are published to configured targets/queues; the Webhook
+  target delivers the same S3 event record JSON to an HTTP endpoint. This is the
+  provider's event/webhook surface. MinIO does not publish a formal AsyncAPI
+  document, so the event and target catalog is captured here (derived from the
+  documented event types and targets). Never fabricated.
+payload:
+  format: S3 event notification record (JSON, s3:* eventName), same shape as the
+    Amazon S3 event message structure
+  envelope_fields: [Records, eventVersion, eventSource, awsRegion, eventTime, eventName, s3]
+targets:
+  - id: webhook
+    kind: http-webhook
+    description: Publish notifications to an HTTP webhook endpoint
+  - id: kafka
+    kind: message-queue
+    description: Publish notifications to a Kafka service
+  - id: amqp
+    kind: message-queue
+    description: Publish notifications to an AMQP service such as RabbitMQ
+  - id: mqtt
+    kind: message-queue
+    description: Publish notifications to an MQTT service
+  - id: nats
+    kind: message-queue
+    description: Publish notifications to a NATS service
+  - id: nsq
+    kind: message-queue
+    description: Publish notifications to a NSQ service
+  - id: redis
+    kind: datastore
+    description: Publish notifications to a Redis service
+  - id: elasticsearch
+    kind: datastore
+    description: Publish notifications to an Elasticsearch service
+  - id: postgresql
+    kind: datastore
+    description: Publish notifications to a PostgreSQL service
+  - id: mysql
+    kind: datastore
+    description: Publish notifications to a MySQL service
+events:
+  object_created:
+    - s3:ObjectCreated:*
+    - s3:ObjectCreated:Put
+    - s3:ObjectCreated:Post
+    - s3:ObjectCreated:Copy
+    - s3:ObjectCreated:CompleteMultipartUpload
+    - s3:ObjectCreated:PutTagging
+    - s3:ObjectCreated:DeleteTagging
+    - s3:ObjectCreated:PutRetention
+    - s3:ObjectCreated:PutLegalHold
+  object_removed:
+    - s3:ObjectRemoved:*
+    - s3:ObjectRemoved:Delete
+    - s3:ObjectRemoved:DeleteMarkerCreated
+  object_accessed:
+    - s3:ObjectAccessed:*
+    - s3:ObjectAccessed:Get
+    - s3:ObjectAccessed:Head
+    - s3:ObjectAccessed:GetRetention
+    - s3:ObjectAccessed:GetLegalHold
+  replication:
+    - s3:Replication:*
+    - s3:Replication:OperationCompletedReplication
+    - s3:Replication:OperationFailedReplication
+    - s3:Replication:OperationMissedThreshold
+    - s3:Replication:OperationNotTracked
+    - s3:Replication:OperationReplicatedAfterThreshold
+    - s3:ObjectReplicationMissedThreshold
+    - s3:ObjectReplicationReplicatedAfterThreshold
+  ilm_transition:
+    - s3:ObjectRestore:*
+    - s3:ObjectRestore:Post
+    - s3:ObjectRestore:Completed
+    - s3:ObjectTransition:*
+    - s3:ObjectTransition:Failed
+    - s3:ObjectTransition:Complete
+  scanner:
+    - s3:Scanner:*
+    - s3:Scanner:ManyVersions
+    - s3:Scanner:LargeVersions
+    - s3:Scanner:BigPrefix
+configuration:
+  mechanism: >-
+    Targets are registered via `mc admin config set` (or environment variables),
+    then a bucket-level event subscription is added with `mc event add
+    ALIAS/BUCKET arn:minio:sqs::ID:TARGET --event <event-type>`. Target ARNs take
+    the form arn:minio:sqs::<ID>:<target>.
+docs: https://docs.min.io/enterprise/aistor-object-store/administration/bucket-notifications/

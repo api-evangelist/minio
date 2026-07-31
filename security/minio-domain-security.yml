@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: min.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 17 06:59:14 2026 GMT
+  hsts: false
+- host: play.min.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 10 01:28:29 2026 GMT
+  hsts: null
+domains:
+- domain: min.io
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

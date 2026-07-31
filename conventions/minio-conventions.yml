@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://min.io/product/s3-compatibility and https://docs.aws.amazon.com/AmazonS3/latest/API/ (the S3 REST contract MinIO implements)
+conventions:
+  authentication:
+    style: AWS Signature Version 4 (access-key/secret-key)
+    ref: authentication/minio-authentication.yml
+  base_protocol: S3 REST API (XML request/response bodies, path- and virtual-host-style bucket addressing)
+  idempotency:
+    supported: false
+    note: >-
+      No Idempotency-Key header. S3 write semantics are inherently idempotent at
+      the operation level (PUT Object fully replaces an object key; DELETE is
+      idempotent), but there is no dedicated idempotency-key contract, so no
+      Idempotency pointer is emitted.
+  pagination:
+    style: continuation-token (S3 ListObjectsV2) / marker (ListObjects)
+    request_params: [max-keys, continuation-token, start-after, marker, prefix, delimiter]
+    response_fields: [IsTruncated, NextContinuationToken, NextMarker, KeyCount]
+  versioning:
+    api: S3 API is unversioned by path; object versioning is a bucket feature (VersionId)
+    software: date-based release tags (RELEASE.YYYY-MM-DDTHH-MM-SSZ)
+    ref: lifecycle/minio-lifecycle.yml
+  error_envelope:
+    format: S3 XML error (<Error><Code><Message><Resource><RequestId>)
+    ref: errors/minio-error-codes.yml
+  request_tracing:
+    request_id_header: x-amz-request-id
+    extended_id_header: x-amz-id-2
+  rate_limit_signaling:
+    note: No published per-request rate-limit headers; throughput governed by deployment sizing and optional API request limits (mc admin config set api requests_max).
+  metadata:
+    user_metadata_prefix: x-amz-meta-
+    tagging: object and bucket tagging via x-amz-tagging / PutObjectTagging
+  multipart:
+    supported: true
+    operations: [CreateMultipartUpload, UploadPart, CompleteMultipartUpload, AbortMultipartUpload]

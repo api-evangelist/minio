@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/minio/minio/releases and https://github.com/minio/minio/blob/master/SECURITY.md
+versioning:
+  scheme: date-based release tags
+  format: RELEASE.YYYY-MM-DDTHH-MM-SSZ
+  current: RELEASE.2025-10-15T17-29-55Z
+  docs: https://github.com/minio/minio/releases
+support_policy:
+  statement: >-
+    Security updates are provided for the latest release only; users upgrade to
+    the latest release to receive fixes.
+  source: https://github.com/minio/minio/blob/master/SECURITY.md
+deprecation:
+  formal_policy: false
+  note: >-
+    No published API deprecation policy or RFC 8594 Sunset/Deprecation header
+    contract. The S3 API surface is stable and versionless; software lifecycle
+    is managed through rolling date-based releases.
+status_page:
+  found: false
+  note: status.min.io resolves to the MinIO SUBNET commercial support portal, not an operational status/incident page.

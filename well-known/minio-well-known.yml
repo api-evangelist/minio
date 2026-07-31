@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+host: https://min.io
+note: >-
+  No /.well-known discovery documents are published on min.io. All probed paths
+  returned 404 (or a 301 to the site 404 page). Absence is valid, recorded data.
+  MinIO is self-hosted software; discovery lives in the docs and GitHub org, not
+  a hosted well-known surface.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

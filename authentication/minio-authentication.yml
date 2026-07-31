@@ -1,0 +1,43 @@
+generated: '2026-07-20'
+method: searched
+source: https://min.io/docs/minio/linux/developers/security-token-service.html and https://min.io/docs/minio/linux/administration/identity-access-management.html
+summary:
+  types: [signature-v4, sts, ldap, oidc]
+  api_key_in: [header]
+  model: access-key/secret-key with AWS Signature Version 4
+schemes:
+- name: SignatureV4
+  type: signature
+  scheme: aws-sigv4
+  description: >-
+    Primary S3 data-plane authentication. Requests are signed with AWS Signature
+    Version 4 using an access key ID and secret access key, presented in the
+    Authorization header (or as presigned query parameters). Fully compatible
+    with AWS SDK signing.
+  location: header
+  header: Authorization
+- name: STS
+  type: sts
+  description: >-
+    Temporary credentials via the MinIO Security Token Service, including
+    AssumeRole, AssumeRoleWithWebIdentity (OIDC), AssumeRoleWithLDAPIdentity,
+    AssumeRoleWithCustomToken, and AssumeRoleWithClientGrants.
+  endpoints:
+  - AssumeRole
+  - AssumeRoleWithWebIdentity
+  - AssumeRoleWithLDAPIdentity
+  - AssumeRoleWithClientGrants
+  - AssumeRoleWithCertificate
+- name: OIDC
+  type: openIdConnect
+  description: External identity via OpenID Connect providers, exchanged for STS credentials.
+- name: LDAP
+  type: ldap
+  description: External identity via LDAP/Active Directory, exchanged for STS credentials.
+policies:
+  model: IAM-compatible JSON policies (AWS IAM syntax) attached to users, groups, and service accounts
+  service_accounts: true
+notes: >-
+  MinIO uses S3/IAM-style key auth, not OAuth scopes; access is governed by
+  IAM-compatible JSON policy documents rather than an OAuth scope registry, so
+  no scopes/ artifact is emitted.

@@ -1,0 +1,56 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/minio/mc and https://min.io/docs/minio/linux/reference/minio-mc.html
+cli:
+  name: mc
+  title: MinIO Client
+  description: >-
+    `mc` (MinIO Client) is a modern, S3-aware alternative to the UNIX coreutils
+    (ls, cp, mirror, diff, find, cat) for object storage. It manages MinIO and
+    any S3-compatible service through named host aliases and also exposes the
+    MinIO admin surface via `mc admin`.
+  repo: https://github.com/minio/mc
+  install:
+  - method: homebrew
+    command: brew install minio/stable/mc
+  - method: binary
+    command: curl https://dl.min.io/client/mc/release/linux-amd64/mc -o mc && chmod +x mc
+  - method: docker
+    command: docker run minio/mc
+  - method: windows
+    command: download https://dl.min.io/client/mc/release/windows-amd64/mc.exe
+  config:
+    alias_command: mc alias set <alias> <endpoint> <access-key> <secret-key>
+    preconfigured_alias: play  # points at the public https://play.min.io playground
+  command_groups:
+  - group: object-operations
+    commands: [ls, cp, mv, rm, mirror, find, cat, head, pipe, stat, du, tree, diff]
+  - group: bucket-operations
+    commands: [mb, rb, ls]
+  - group: sharing-and-access
+    commands: [share, anonymous]
+  - group: object-management
+    commands: [tag, retention, legalhold, encrypt, version, ilm, replicate, undo]
+  - group: watch-and-events
+    commands: [watch, event]
+  - group: admin
+    commands:
+    - admin info
+    - admin user
+    - admin group
+    - admin policy
+    - admin service
+    - admin heal
+    - admin config
+    - admin trace
+    - admin logs
+    - admin bucket remote
+    - admin replicate
+    - admin scanner
+  key_flows:
+  - name: Copy a local file to a bucket
+    steps: [mc alias set myminio https://play.min.io KEY SECRET, mc mb myminio/mybucket, mc cp ./file.txt myminio/mybucket/]
+  - name: Mirror a directory continuously
+    steps: [mc mirror --watch ./localdir myminio/mybucket]
+  - name: Inspect cluster health (admin)
+    steps: [mc admin info myminio]

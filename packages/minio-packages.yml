@@ -1,0 +1,73 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/minio and public package registries (npm, PyPI, Maven Central, NuGet, pkg.go.dev, crates.io)
+packages:
+- language: go
+  registry: pkg.go.dev
+  name: github.com/minio/minio-go/v7
+  url: https://pkg.go.dev/github.com/minio/minio-go/v7
+  install: go get github.com/minio/minio-go/v7
+  repo: https://github.com/minio/minio-go
+  official: true
+- language: python
+  registry: pypi
+  name: minio
+  version: 7.2.20
+  url: https://pypi.org/project/minio/
+  install: pip install minio
+  repo: https://github.com/minio/minio-py
+  official: true
+- language: java
+  registry: maven-central
+  name: io.minio:minio
+  version: 8.5.17
+  url: https://central.sonatype.com/artifact/io.minio/minio
+  install: 'maven: io.minio:minio:8.5.17'
+  repo: https://github.com/minio/minio-java
+  official: true
+- language: javascript
+  registry: npm
+  name: minio
+  version: 8.0.7
+  url: https://www.npmjs.com/package/minio
+  install: npm install minio
+  repo: https://github.com/minio/minio-js
+  official: true
+- language: dotnet
+  registry: nuget
+  name: Minio
+  version: 7.0.0
+  url: https://www.nuget.org/packages/Minio/
+  install: dotnet add package Minio
+  repo: https://github.com/minio/minio-dotnet
+  official: true
+- language: rust
+  registry: crates.io
+  name: minio
+  version: 0.4.0
+  url: https://crates.io/crates/minio
+  install: cargo add minio
+  repo: https://github.com/minio/minio-rs
+  official: true
+- language: cpp
+  registry: github
+  name: minio-cpp
+  url: https://github.com/minio/minio-cpp
+  repo: https://github.com/minio/minio-cpp
+  official: true
+- language: go
+  registry: pkg.go.dev
+  name: github.com/minio/madmin-go/v3
+  url: https://pkg.go.dev/github.com/minio/madmin-go/v3
+  install: go get github.com/minio/madmin-go/v3
+  repo: https://github.com/minio/madmin-go
+  official: true
+  note: Admin (management) SDK, distinct from the S3 data-plane SDK
+- language: binary
+  registry: github
+  name: mc
+  url: https://github.com/minio/mc
+  install: brew install minio/stable/mc
+  repo: https://github.com/minio/mc
+  official: true
+  note: MinIO Client (mc) command-line tool; see cli/minio-cli.yml
