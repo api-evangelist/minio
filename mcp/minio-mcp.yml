@@ -5,17 +5,21 @@ source: https://github.com/minio/mcp-server-aistor
 server:
   name: aistor
   title: AIStor MCP server
-  description: >-
-    Official Model Context Protocol server for interacting with MinIO / AIStor
-    object stores. Ships as a container image; runs read-only by default and
-    gates write, delete, and admin operations behind explicit flags
-    (--allow-write, --allow-delete, --allow-admin).
-  transport: [stdio, streamable-http]
+  description: Official Model Context Protocol server for interacting with MinIO / AIStor object stores.
+    Ships as a container image; runs read-only by default and gates write, delete, and admin operations
+    behind explicit flags (--allow-write, --allow-delete, --allow-admin).
+  transport:
+  - stdio
+  - streamable-http
   image: quay.io/minio/aistor/mcp-server-aistor:latest
   repo: https://github.com/minio/mcp-server-aistor
   docs: https://blog.min.io/mcp-server-for-aistor/
   auth:
-    env: [MINIO_ENDPOINT, MINIO_ACCESS_KEY, MINIO_SECRET_KEY, MINIO_USE_SSL]
+    env:
+    - MINIO_ENDPOINT
+    - MINIO_ACCESS_KEY
+    - MINIO_SECRET_KEY
+    - MINIO_USE_SSL
 tools:
 - name: list_buckets
   category: read
@@ -59,3 +63,10 @@ tools:
   category: admin
   gated_by: --allow-admin
   description: Get cluster info (config, health status, available space) in human-readable form
+deployment:
+  mode: remote
+  endpoint: https://blog.min.io/mcp-server-for-aistor/
+  verified: probed
+  probe: not-mcp
+  checked: '2026-08-12'
+  source: catalog MCP census
