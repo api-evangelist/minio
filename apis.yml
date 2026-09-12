@@ -93,6 +93,8 @@ apis:
   - Administration
   - Object Storage
 common:
+- type: Website
+  url: https://www.min.io/
 - type: TrustCenter
   url: security/minio-trust-center.yml
 - type: DeveloperPortal
