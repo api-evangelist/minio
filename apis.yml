@@ -48,7 +48,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-10-06'
 tags:
 - Object Storage
 - Storage
@@ -93,6 +93,8 @@ apis:
   - Administration
   - Object Storage
 common:
+- url: https://www.min.io/blog
+  type: Blog
 - type: Website
   url: https://www.min.io/
 - type: TrustCenter
