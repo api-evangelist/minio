@@ -1,0 +1,13 @@
+fetched: '2026-10-13'
+method: fetched
+source: https://min.io/product/s3-compatibility
+page: https://min.io/product/s3-compatibility
+file: minio-aws-s3-1.md
+bytes: 8158
+sha256: c63b202800e1114f255a560f461e5c234f3ee2735736ccc95cfe260d3c33f42d
+anchor: amazon-web-services
+shape: aws-s3
+classification: declares-compatibility
+quote: 'AIStor S3 API: Full AWS S3 Compatibility On-Prem | MinIO Introducing AIStor Memory: The Enterprise Memory
+  Foundation for Agentic AI'
+note: text extracted from the provider's own page (tags stripped), saved for evidence

@@ -1,0 +1,12 @@
+fetched: '2026-10-13'
+method: fetched
+source: https://docs.min.io/community/minio-object-store/reference/s3-api-compatibility.html
+page: https://docs.min.io/community/minio-object-store/reference/s3-api-compatibility.html
+file: minio-aws-s3-2.md
+bytes: 26721
+sha256: 1dd8fc822a10128318a3f6fca5d05c86dcaa2d28765a8816996169ae9bd146ff
+anchor: amazon-web-services
+shape: aws-s3
+classification: declares-compatibility
+quote: S3 API Compatibility | MinIO AIStor Documentation
+note: text extracted from the provider's own page (tags stripped), saved for evidence

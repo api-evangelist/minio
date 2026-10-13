@@ -20,3 +20,85 @@ edges:
   seller_name: MinIO, Inc
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: Amazon Web Services
+  partner: amazon-web-services
+  partner_match: shape-anchor
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  shape: aws-s3
+  type: docs
+  degree: declared-subset
+  evidence: https://min.io/product/s3-compatibility
+  evidence_kind: own-docs
+  evidence_file: https://github.com/api-evangelist/minio/blob/main/evidence/compatibility/minio-aws-s3-1.md
+  quote: <!-- fetched 2026-10-13 from https://min.io/product/s3-compatibility by sweep-shape-compat.py; text extracted
+    from the provider's own page -->
+  supported_operations:
+  - AbortMultipartUpload
+  - CompleteMultipartUpload
+  - CopyObject
+  - CreateBucket
+  - CreateMultipartUpload
+  - DeleteBucket
+  - DeleteBucketCors
+  - DeleteBucketEncryption
+  - DeleteBucketLifecycle
+  - DeleteBucketPolicy
+  - DeleteBucketReplication
+  - DeleteBucketTagging
+  - DeleteObject
+  - DeleteObjectTagging
+  - DeleteObjects
+  - DeletePublicAccessBlock
+  - GetBucketEncryption
+  - GetBucketLifecycleConfiguration
+  - GetBucketLocation
+  - GetBucketLogging
+  - GetBucketNotificationConfiguration
+  - GetBucketPolicy
+  - GetBucketReplication
+  - GetBucketTagging
+  - GetBucketVersioning
+  - GetObject
+  - GetObjectAttributes
+  - GetObjectLegalHold
+  - GetObjectLockConfiguration
+  - GetObjectRetention
+  - GetObjectTagging
+  - GetPublicAccessBlock
+  - HeadBucket
+  - HeadObject
+  - ListBuckets
+  - ListMultipartUploads
+  - ListObjectVersions
+  - ListObjects
+  - ListObjectsV2
+  - ListParts
+  - PutBucketAcl
+  - PutBucketCors
+  - PutBucketEncryption
+  - PutBucketLifecycleConfiguration
+  - PutBucketLogging
+  - PutBucketNotificationConfiguration
+  - PutBucketPolicy
+  - PutBucketReplication
+  - PutBucketTagging
+  - PutBucketVersioning
+  - PutBucketWebsite
+  - PutObject
+  - PutObjectLegalHold
+  - PutObjectLockConfiguration
+  - PutObjectRetention
+  - PutObjectTagging
+  - PutPublicAccessBlock
+  - RestoreObject
+  - SelectObjectContent
+  - UploadPart
+  - UploadPartCopy
+  unsupported_operations:
+  - GetObjectAcl
+  - PutObjectAcl
+  supported_share: 0.91
+  detected_by: sweep-shape-compat.py
+  first_seen: '2026-10-13'
