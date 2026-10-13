@@ -32,8 +32,8 @@ edges:
   evidence: https://min.io/product/s3-compatibility
   evidence_kind: own-docs
   evidence_file: https://github.com/api-evangelist/minio/blob/main/evidence/compatibility/minio-aws-s3-1.md
-  quote: <!-- fetched 2026-10-13 from https://min.io/product/s3-compatibility by sweep-shape-compat.py; text extracted
-    from the provider's own page -->
+  quote: 'AIStor S3 API: Full AWS S3 Compatibility On-Prem | MinIO Introducing AIStor Memory: The Enterprise Memory
+    Foundation for Agentic AI'
   supported_operations:
   - AbortMultipartUpload
   - CompleteMultipartUpload
