@@ -15,3 +15,26 @@
   relationship: distribution-channel
   status: not-a-workflow
   arazzo: null
+- slug: minio-amazon-web-services
+  label: Amazon Web Services
+  partner: amazon-web-services
+  partner_name: Amazon Web Services
+  type: docs
+  channel: provider-built
+  evidence: https://min.io/product/s3-compatibility
+  source: edge
+  relationship: compatible
+  status: not-a-workflow
+  arazzo: null
+- slug: minio-hightouch
+  label: Hightouch
+  partner: hightouch
+  partner_name: Hightouch
+  type: coverage
+  marketplace: coverage
+  channel: partner-built
+  evidence: https://hightouch.com/docs/destinations/minio
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
+  arazzo: null
