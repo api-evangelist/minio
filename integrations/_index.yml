@@ -72,3 +72,104 @@
     detected: '2026-10-15'
   status: not-a-workflow
   arazzo: null
+- slug: minio-go-module-proxy
+  label: Go module proxy
+  partner_name: Go module proxy
+  category: official SDK (Go)
+  type: register
+  channel: package-registry
+  evidence: https://pkg.go.dev/github.com/minio/madmin-go/v3
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: Go module proxy (public registry JSON)
+    spec_file: null
+    language: Go
+    packages:
+    - name: github.com/minio/madmin-go/v3
+      version: v3.0.110
+      released: '2025-05-02'
+      released_field: Time
+      lapsed: false
+      page: https://pkg.go.dev/github.com/minio/madmin-go/v3
+      repo_leg: github-org:minio
+      publisher_leg: org:minio
+      matched_by: github-org
+    - name: github.com/minio/minio-go/v7
+      version: v7.4.1
+      released: '2026-10-12'
+      released_field: Time
+      lapsed: false
+      page: https://pkg.go.dev/github.com/minio/minio-go/v7
+      repo_leg: github-org:minio
+      publisher_leg: org:minio
+      matched_by: github-org
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: minio-nuget-gallery
+  label: NuGet Gallery
+  partner: nuget
+  partner_name: NuGet Gallery
+  category: official SDK (.NET)
+  type: register
+  channel: package-registry
+  evidence: https://www.nuget.org/packages/Minio
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: NuGet Gallery (public registry JSON)
+    spec_file: null
+    language: .NET
+    packages:
+    - name: Minio
+      version: 7.0.0
+      released: '2025-11-05'
+      released_field: published
+      lapsed: false
+      page: https://www.nuget.org/packages/Minio
+      repo_leg: github-org:minio
+      publisher_leg: org:minio
+      matched_by: github-org
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: minio-pypi
+  label: PyPI
+  partner: pypi
+  partner_name: PyPI
+  category: official SDK (Python)
+  type: register
+  channel: package-registry
+  evidence: https://pypi.org/project/minio/
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: PyPI (public registry JSON)
+    spec_file: null
+    language: Python
+    packages:
+    - name: minio
+      version: 7.2.20
+      released: '2025-11-27'
+      released_field: upload_time
+      lapsed: false
+      page: https://pypi.org/project/minio/
+      repo_leg: github-org:minio
+      publisher_leg: email:min.io
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
