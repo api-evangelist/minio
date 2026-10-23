@@ -21,6 +21,9 @@ checked:
 - https://catalog.redhat.com/api/containers/v1/repositories?page_size=100
 - https://catalog.redhat.com/api/containers/v1/vendors/label/
 - https://catalog.redhat.com/software/partners
+- https://landscape.cd.foundation/data/full.json
+- https://plugins.jenkins.io/api/plugin/
+- https://plugins.jenkins.io/api/plugins
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -365,4 +368,23 @@ edges:
     detected: '2026-10-22'
   detected_by: sweep-red-hat-certified-ecosystem.py
   first_seen: '2026-10-22'
+- partner_name: Jenkins (own)
+  partner: jenkins
+  partner_match: mirror
+  mirror_match: register
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://plugins.jenkins.io/minio-storage/
+  mirror_of: jenkins/integrations/jenkins-integration-edges.yml
+  apps:
+  - Minio Storage (minio-storage)
+  listing_count: 1
+  category: Jenkins plugin
+  signal_note: 'publisher side of the all/jenkins listing; vendor-control: minio-storage: maintainer account ''minio''
+    is the GitHub organization on all/minio''s apis.yml'
+  detected: '2026-10-22'
+  detected_by: sweep-jenkins-cd-foundation-plugins.py
 source: https://hightouch.com/docs/destinations/minio
