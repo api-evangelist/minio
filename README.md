@@ -1,4 +1,4 @@
-# Minio
+# MinIO
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,6 +64,112 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Minio is a company surfaced as a portfolio company of general-catalyst, softbank-vision-fund and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+MinIO is a high-performance, S3-compatible object storage system built for large-scale AI, analytics, and cloud-native data infrastructure. Its API is a drop-in implementation of the Amazon S3 REST API (bucket and object operations, multipart uploads, versioning, object locking / WORM retention, lifecycle policies, replication, and encryption), authenticated with AWS Signature Version 4 using access-key/secret-key pairs. Alongside the S3 data API, MinIO ships an Admin API (madmin) for cluster, user, policy, and service management. It is distributed as open-source software and as the commercial AIStor product, deployed on Kubernetes via an operator and Helm charts, and driven through first-party SDKs for Go, Python, Java, JavaScript, .NET, C++, and Rust plus the `mc` command-line client.
 
-Backed by: general-catalyst, softbank-vision-fund
+**Areas:** Object Storage · Storage · S3 Compatible · Cloud-Native · Kubernetes · Data Infrastructure · AI Storage · Company
+
+## MinIO on APIs.io
+
+Everything profiled for MinIO is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/minio/](https://apis.io/providers/minio/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [MinIO S3-Compatible API](https://apis.io/apis/minio/minio-s3-compatible-api/) — S3-compatible object storage REST API implementing Amazon S3 bucket and object operations (put/get/list/delete objects, multipart uploads, versioning,…
+- [MinIO Admin API](https://apis.io/apis/minio/minio-admin-api/) — Administrative API (madmin) for managing MinIO/AIStor clusters: users, groups, canned and IAM policies, service accounts, healing, cluster info,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Minio Bucket Notifications Webhooks](https://apis.io/asyncapis/minio/minio-bucket-notifications-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [AIStor MCP server](https://apis.io/servers/minio/aistor/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Minio Authentication](https://apis.io/security/minio/minio-authentication/)
+- [Minio Domain Security](https://apis.io/security/minio/minio-domain-security/)
+- [Minio Trust Center](https://apis.io/security/minio/minio-trust-center/)
+- [Minio Vulnerability Disclosure](https://apis.io/security/minio/minio-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.min.io/)
+- [Documentation](https://min.io/docs)
+- [Getting started](https://min.io/docs/minio/linux/index.html)
+- [API reference](https://min.io/product/s3-compatibility)
+- [Pricing](https://min.io/pricing)
+- [Sign up](https://subnet.min.io/login)
+- [Support](https://subnet.min.io)
+- [Blog](https://www.min.io/blog)
+- [Compliance](https://trust.min.io/)
+- [Terms of service](https://www.min.io/legal/aistor-free-agreement)
+- [Privacy policy](https://www.min.io/legal/privacy-policy)
+- [GitHub](https://github.com/minio)
+
+## API Evangelist rating
+
+**Kin Score 51.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 71.4 |
+| Access clarity | 47.4 |
+
+**Agent readiness 26.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/minio/](https://apis.io/providers/minio/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for MinIO: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/minio/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
